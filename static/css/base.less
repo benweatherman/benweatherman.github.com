@@ -1,0 +1,123 @@
+/* GLOBALS */
+
+body {font-family: 'Proxima Nova', Helvetica, Arial, sans-serif; line-height: 1.5; font-size: 1em;}
+
+a {text-decoration: none; padding: 2px;}
+a:hover {.border-radius(3px);}
+a:active, a:focus {outline: 1px dotted;}
+
+h1, h2, h3, h4, h5 {margin: 0;}
+
+p {font-size: 1.3em;}
+
+/* BORDER RADIUS */
+.border-radius(@amount) {border-radius: @amount; -moz-border-radius: @amount; -webkit-border-radius: @amount; -o-border-radius: @amount;}
+
+
+
+/* COLOR SCHEMES */
+
+	/* BLUE/LIGHT */
+	body.light {color: #081b3b;}
+	.light {
+		a {color: #174696;}
+		a:hover, a.active, a:focus {color: #2161cb;}
+		a:focus {outline: 1px dotted #174696;}
+
+		header, footer {border-color: #174696;}
+		.date {color: #999;}
+		.excerpt {color: #333;}
+
+		#about a:hover, .title a:hover {color: #fff; background-color: #a0d65b;}
+		
+		#notes h2, #codes h2 {color: #fff; background-color: #2161cb;}
+
+	}
+
+	/* BLUE REVERSE/DARK */
+	body.dark {background-color: #081b3b; color: #f7f7f7;}
+	.dark {
+		a {color: #fff;}
+		a:hover, a.active, a:focus {color: #f7f7f7;}
+		a:focus {outline: 1px dotted #174696;}
+
+		header, footer {border-color: #fff;}
+		.date {color: #dd;}
+		.excerpt {color: #ddd;}
+
+		#about a, .title a {color: #679bef;}
+		#about a:hover, .title a:hover {color: #fff; background-color: #a0d65b;}
+		
+		#notes h2, #codes h2 {color: #fff; background-color: #a0d65b;}
+
+	}
+
+
+/* PAGE STYLE */
+
+#container {width: 960px; margin: 0 auto;}
+
+	header {border-bottom: 1px solid; padding: 25px 0; margin-bottom: 40px;}
+		header:after {content: ""; clear: both; display: block; visibility: hidden;}
+		header h1 {float: left; font-weight: normal; font-size: 3em;}
+			header h1 a.at {font-size: 24px; vertical-align: 5px;}
+			header h1 span {font-weight: bold;}
+
+		nav {float: right; padding-top: 20px;}
+			nav li {font-size: 1.5em; list-style-type: none; display: inline-block; margin-left: 15px;}
+			nav li a.selected, nav li a.selected:hover {color: #999; cursor: default;}
+
+
+	#main {clear: both;}
+
+		ul#posts {margin: 0; padding: 0;}
+			ul#posts li {list-style-type: none; margin-bottom: 60px;}
+
+			h3.title {font-size: 2.5em; font-weight: bold; display: inline-block; margin-bottom: 0;}
+			.date {display: inline-block; margin-left: 20px;}
+			.excerpt {margin-top: 5px;}
+
+	footer {border-top: 1px solid; padding: 25px 0; margin: 30px 0;}
+
+
+/* POST STYLE */
+article {}
+
+
+
+
+/* NOTES & CODES PAGES STYLE */
+#notes h2, #codes h2 {display: inline-block; padding: 2px 5px; .border-radius(3px); margin-bottom: 30px;}
+
+
+/* CODE SNIPPET STYLE */
+pre, code {background: #f7f7f7; color: #000; padding: 10px; border: 1px solid #999; .border-radius(3px);}
+
+
+/* ABOUT PAGE */
+#about {}
+	#about p {font-size: 32px;}
+
+
+
+/* RESPONSIVE STYLES */
+	@media screen and (max-width: 790px) {
+		#container {width: 600px;}
+		header h1 {font-size: 2em;}
+		nav {padding-top: 10px;}
+		nav li {font-size: 1em;}
+	}
+
+	@media screen and (max-width: 500px) {
+		#container {width: 430px;}
+		nav {clear: both; float: none;}
+		#posts .excerpt {display: none;}
+	}
+
+	@media screen and (max-width: 400px) {
+		#container {width: 300px;}
+		header h1 {font-size: 2em;}
+		h3.title {line-height: 1; font-size: 2em;}
+		.date {display: block; margin: 0;}
+	}
+
