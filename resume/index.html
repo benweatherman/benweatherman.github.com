@@ -32,6 +32,16 @@
     />
     <link rel="stylesheet" href="/css/resume.css" />
     <script data-goatcounter="https://fatchops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var rev = function (s) { return s.split("").reverse().join(""); };
+        document.querySelectorAll("a.obfuscated-email").forEach(function (a) {
+          var addr = rev(a.dataset.u) + "@" + rev(a.dataset.d);
+          a.href = "mailto:" + addr;
+          a.textContent = addr;
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -51,8 +61,8 @@
           <ul class="list-unstyled contact-list">
             <li class="email">
               <i class="fa fa-envelope"></i
-              ><a href="mailto: benweatherman@gmail.com"
-                >benweatherman@gmail.com</a
+              ><a class="obfuscated-email" href="#" data-u="namrehtaewneb" data-d="moc.liamg"
+                >ben<span class="decoy">REMOVE</span>weather<span class="decoy">.spam</span>man@<span class="decoy">no-bot.</span>gmail<span class="decoy">.invalid</span>.com</a
               >
             </li>
             <li class="stackoverflow">

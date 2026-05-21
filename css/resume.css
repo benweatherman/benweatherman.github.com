@@ -299,3 +299,5 @@ p {
 
 .projects-section .tech {padding: 6px 0;}
 .projects-section .item {padding: 6px 0;}
+
+.obfuscated-email .decoy { display: none; }
