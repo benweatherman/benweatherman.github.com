@@ -105,17 +105,18 @@ header::after {
 }
 .head-row { display: flex; align-items: center; gap: 26px; }
 .avatar {
-  width: 88px; height: 88px; border-radius: 50%; object-fit: cover;
+  width: 108px; height: 108px; border-radius: 50%; object-fit: cover;
   flex-shrink: 0; border: 2px solid var(--accent);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
 }
-.head-text { display: flex; flex-direction: column; gap: 14px; }
+.head-text { display: flex; flex-direction: column; gap: 12px; min-width: 0; flex: 1; }
 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 40px; font-weight: 700; margin: 0;
-  letter-spacing: -0.02em; line-height: 1.05;
+  font-size: 46px; font-weight: 700; margin: 0;
+  letter-spacing: -0.02em; line-height: 1.0;
 }
-.contact { display: flex; flex-wrap: wrap; gap: 8px; }
+/* nudge the chip row so its text aligns under the name's first glyph */
+.contact { display: flex; flex-wrap: wrap; gap: 8px; margin-left: -1px; }
 .chip {
   font-size: 13px; color: var(--fg);
   background: var(--chip-bg); border: 1px solid var(--border);
@@ -159,12 +160,7 @@ li::before {
   content: ""; position: absolute; left: 4px; top: 10px;
   width: 6px; height: 6px; border-radius: 50%; background: var(--grad);
 }
-.arrow {
-  color: var(--fg);
-  background: color-mix(in srgb, var(--accent2) 22%, transparent);
-  padding: 1px 6px; border-radius: 5px; font-weight: 500;
-  white-space: nowrap;
-}
+.arrow { color: inherit; }
 
 /* ---- tag rows (tech, personality, stats) ---- */
 .tech { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
