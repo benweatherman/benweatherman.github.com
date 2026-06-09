@@ -5,10 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ben's Resume" />
-    <meta
-      name="author"
-      content="Ben Weatherman (template by Xiaoying Riley at 3rd Wave Media)"
-    />
+    <meta name="author" content="Ben Weatherman" />
     <meta property="og:title" content="Ben's Resume">
     <meta property="og:descriptionm" content="Ever wondered what my GPA was 20+ years ago? Look no further.">
     <meta property="og:type" content="website">
@@ -16,21 +13,25 @@
     <meta property="og:image" content="https://www.gravatar.com/avatar/bca98d4d3087d669f5317e2c73f54e45?s=1024">
 
     <link rel="canonical" href="https://fatchopsismyhomeboy.com/resume">
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="/css/resume.css" />
+    <script>
+      /* set theme before paint to avoid a flash */
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        if (!t) {
+          t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
+            ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
     <script data-goatcounter="https://fatchops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -45,440 +46,294 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <div class="sidebar-wrapper">
-        <div class="profile-container">
+    <button class="toggle" id="themeToggle" aria-label="Toggle dark / light theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+      <span class="label">Theme</span>
+    </button>
+
+    <div class="page">
+      <header>
+        <div class="head-row">
           <img
-            class="img-circle profile"
-            src="https://www.gravatar.com/avatar/bca98d4d3087d669f5317e2c73f54e45?s=100"
-            alt="Look it's me!"
+            class="avatar"
+            src="https://www.gravatar.com/avatar/bca98d4d3087d669f5317e2c73f54e45?s=200"
+            alt="Ben Weatherman"
           />
-          <h1 class="name">Ben Weatherman</h1>
+          <div class="head-text">
+            <h1>Ben Weatherman</h1>
+            <div class="contact">
+              <span class="chip">
+                <a class="obfuscated-email" href="#" data-u="namrehtaewneb" data-d="moc.liamg"
+                  >ben<span class="decoy">REMOVE</span>weather<span class="decoy">.spam</span>man@<span class="decoy">no-bot.</span>gmail<span class="decoy">.invalid</span>.com</a
+                >
+              </span>
+              <span class="chip"><a href="https://github.com/benweatherman">github/benweatherman</a></span>
+              <span class="chip">BS Computer Engineering · Iowa State ’03 · GPA 3.36</span>
+            </div>
+          </div>
         </div>
+      </header>
 
-        <div class="contact-container container-block">
-          <ul class="list-unstyled contact-list">
-            <li class="email">
-              <i class="fa fa-envelope"></i
-              ><a class="obfuscated-email" href="#" data-u="namrehtaewneb" data-d="moc.liamg"
-                >ben<span class="decoy">REMOVE</span>weather<span class="decoy">.spam</span>man@<span class="decoy">no-bot.</span>gmail<span class="decoy">.invalid</span>.com</a
-              >
-            </li>
-            <li class="github">
-              <i class="fa fa-github"></i
-              ><a href="https://github.com/benweatherman">/benweatherman</a>
-            </li>
+      <section>
+        <h2 class="section-title">Overview</h2>
+        <div class="card">
+          <p class="lede">
+            Lifelong programming polyglot, former CTO, and co-founder. I love
+            solving complex problems with simple code, working with product owners
+            to ship features, and mentoring teammates on code &amp; career.
+          </p>
+          <div class="tech">
+            <span class="tag hl">99.9% AI</span>
+            <span class="tag">graphql influencer</span>
+            <span class="tag">0.5x hypergrowth unicorn</span>
+            <span class="tag">enterprise agile coach</span>
+            <span class="tag">extremely mediocre</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Work History</h2>
+
+        <div class="card">
+          <div class="row">
+            <span><span class="role">VP of Engineering</span> · <span class="co"><a href="https://serviceup.com">ServiceUp</a></span> <span class="loc">· Remote</span></span>
+            <span class="when">Aug 2022 — Present</span>
+          </div>
+          <p class="desc">
+            Joined <a href="https://serviceup.com">ServiceUp</a> as a Senior
+            Engineer and grew into VP of Engineering as the company scaled.
+            ServiceUp is a marketplace connecting fleets with auto service shops.
+          </p>
+          <ul>
+            <li>Still ships a boatload of code across backend, frontend, and devops</li>
+            <li>Recruited and mentored the engineering team as it scaled from 5 to 15 engineers</li>
+            <li>Built a career rubric with the eng leads and promoted engineers into Senior, Staff, Principal, and Engineering Manager roles</li>
+            <li>Set technical direction across the TypeScript monorepo — backend services, customer-facing portals, data warehouse, and a layered ML strategy <span class="arrow">(rules → models → LLM → human-in-the-loop)</span></li>
+            <li>Represented engineering with product, design, ops, sales, support, recruiting, and the exec team</li>
           </ul>
-        </div>
-        <div class="education-container container-block">
-          <h2 class="container-block-title">Education</h2>
-          <div class="item">
-            <h4 class="degree">BS in Computer Engineering</h4>
-            <h5 class="meta">Iowa State University</h5>
-            <div class="time">1998 - 2003</div>
-            <div class="meta">GPA 3.36/4.0</div>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">typescript</span><span class="tag">node</span><span class="tag">react</span><span class="tag">next.js</span><span class="tag">hasura</span><span class="tag">graphql</span><span class="tag">postgres</span><span class="tag">google cloud</span>
           </div>
         </div>
-      </div>
 
-      <div class="main-wrapper">
-        <section class="section summary-section">
-          <h2 class="section-title"><i class="fa fa-user"></i>Overview</h2>
-          <div class="summary">
-            <p>
-              Lifelong programming polyglot, former CTO, and co-founder. I love
-              solving complex problems with simple code, working with product owners
-              to ship features, and mentoring teammates on code & career.
-            </p>
-            <p>
-              99.9% AI, graphql influencer, 0.5x hypergrowth unicorn, enterprise agile coach, extremely mediocre.
-            </p>
+        <div class="card">
+          <div class="row">
+            <span><span class="role">Senior Software Engineer</span> · <span class="co"><a href="https://www.apollographql.com">Apollo GraphQL</a></span> <span class="loc">· Remote</span></span>
+            <span class="when">Sept 2021 — Aug 2022</span>
           </div>
-        </section>
-
-        <section class="section experiences-section">
-          <h2 class="section-title">
-            <i class="fa fa-briefcase"></i>Work History
-          </h2>
-
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">VP of Engineering</h3>
-                <div class="time">Aug 2022 - Present</div>
-              </div>
-              <div class="company">
-                <a href="https://serviceup.com">ServiceUp</a>, Remote
-              </div>
-            </div>
-            <div class="details">
-              <p>
-                Joined <a href="https://serviceup.com">ServiceUp</a> as a
-                Senior Engineer and grew into VP of Engineering as the
-                company scaled. ServiceUp is a marketplace connecting fleets
-                with auto service shops.
-              </p>
-              <ul>
-                <li>
-                  Still ships a boatload of code across backend, frontend,
-                  and devops
-                </li>
-                <li>
-                  Recruited and mentored the engineering team as it scaled
-                  from 5 to 15 engineers
-                </li>
-                <li>
-                  Built a career rubric with the eng leads and promoted
-                  engineers into Senior, Staff, Principal, and Engineering
-                  Manager roles
-                </li>
-                <li>
-                  Set technical direction across the TypeScript monorepo —
-                  backend services, customer-facing portals, data warehouse,
-                  and a layered ML strategy (rules → models → LLM →
-                  human-in-the-loop)
-                </li>
-                <li>
-                  Represented engineering with product, design, ops, sales,
-                  support, recruiting, and the exec team
-                </li>
-              </ul>
-            </div>
-            <div class="tech">
-              <b>key tech</b>
-              <span
-                >typescript, node, react, next.js, hasura, graphql, postgres,
-                google cloud</span
-              >
-            </div>
+          <p class="desc">
+            Worked on
+            <a href="https://www.apollographql.com/docs/federation/">Apollo Federation</a>,
+            the open-source framework for composing GraphQL services.
+          </p>
+          <ul>
+            <li>
+              Contributed to the Federation 2.0 release, including work on the
+              <a href="https://www.apollographql.com/docs/federation/federated-types/federated-directives/#shareable">@shareable</a>
+              and
+              <a href="https://www.apollographql.com/docs/federation/federated-types/federated-directives/#inaccessible">@inaccessible</a>
+              directives
+            </li>
+            <li>Wrote and reviewed TypeScript across the federation, query planner, and gateway packages</li>
+            <li>Triaged community issues and supported users adopting Federation 2</li>
+            <li>Collaborated with product and DX on docs, examples, and rollout</li>
+          </ul>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">typescript</span><span class="tag">node</span><span class="tag">graphql</span><span class="tag">jest</span>
           </div>
+        </div>
 
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">Senior Software Engineer</h3>
-                <div class="time">Sept 2021 - Aug 2022</div>
-              </div>
-              <div class="company">
-                <a href="https://www.apollographql.com">Apollo GraphQL</a>, Remote
-              </div>
-            </div>
-            <div class="details">
-              <p>
-                Worked on
-                <a href="https://www.apollographql.com/docs/federation/"
-                  >Apollo Federation</a
-                >, the open-source framework for composing GraphQL services.
-              </p>
-              <ul>
-                <li>
-                  Contributed to the Federation 2.0 release, including work on
-                  the
-                  <a href="https://www.apollographql.com/docs/federation/federated-types/federated-directives/#shareable"
-                    >@shareable</a
-                  >
-                  and
-                  <a href="https://www.apollographql.com/docs/federation/federated-types/federated-directives/#inaccessible"
-                    >@inaccessible</a
-                  >
-                  directives
-                </li>
-                <li>
-                  Wrote and reviewed TypeScript across the federation, query
-                  planner, and gateway packages
-                </li>
-                <li>
-                  Triaged community issues and supported users adopting
-                  Federation 2
-                </li>
-                <li>
-                  Collaborated with product and DX on docs, examples, and
-                  rollout
-                </li>
-              </ul>
-            </div>
-            <div class="tech">
-              <b>key tech</b>
-              <span>typescript, node, graphql, jest</span>
-            </div>
+        <div class="card">
+          <div class="row">
+            <span><span class="role">Senior Software Engineer</span> · <span class="co"><a href="https://literati.com">Literati</a></span> <span class="loc">· Austin</span></span>
+            <span class="when">April 2020 — Sept 2021</span>
           </div>
+          <p class="desc">
+            Launched
+            <a href="https://literati.com/book-clubs/">Literati Book Clubs</a>,
+            a platform for discussing books curated by influencers.
+          </p>
+          <ul>
+            <li>Built graphql APIs to support iOS, Android, and web</li>
+            <li>Broke down features into tickets, performed code reviews, organized team meetings</li>
+            <li>Committed mostly django code, along with fairly large react and devops features</li>
+            <li>Worked closely with product owners to define goals and experimented to find features users love</li>
+          </ul>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">python</span><span class="tag">django</span><span class="tag">graphql</span><span class="tag">celery</span><span class="tag">react</span><span class="tag">gitlab</span><span class="tag">postgres</span><span class="tag">google cloud</span><span class="tag">sentry</span>
+          </div>
+        </div>
 
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">Senior Software Engineer</h3>
-                <div class="time">April 2020 - Sept 2021</div>
-              </div>
-              <div class="company">
-                <a href="https://literati.com">Literati</a>, Austin
-              </div>
-            </div>
-            <div class="details">
-              <p>
-                Launched
-                <a href="https://literati.com/book-clubs/"
-                  >Literati Book Clubs</a
-                >, a platform for discussing books curated by influencers.
-              </p>
-              <ul>
-                <li>Built graphql APIs to support iOS, Android, and web</li>
-                <li>Broke down features into tickets, performed code reviews, organized team meetings</li>
-                <li>Committed mostly django code, along with fairly large react and devops features</li>
-                <li>
-                  Worked closely with product owners to define goals and experimented to find
-                  features users love
-                </li>
-              </ul>
-            </div>
-            <div class="tech">
-              <b>key tech</b>
-              <span
-                >python, django, graphql, celery, react, gitlab, postgres, google cloud, sentry</span
-              >
-            </div>
+        <div class="card">
+          <div class="row">
+            <span><span class="role">Senior Staff Engineer</span> · <span class="co"><a href="https://thezebra.com">The Zebra</a></span> <span class="loc">· Austin</span></span>
+            <span class="when">2018 — April 2020</span>
           </div>
+          <p class="desc">
+            Led teams building all aspects of car insurance quotes. Advocated for
+            simpler system designs, and closely collaborated with product owners
+            to ensure both feature development and tech debt were addressed.
+          </p>
+          <ul>
+            <li>Led team to build internal <a href="https://www.oag.ca.gov/privacy/ccpa">CCPA</a> compliance system</li>
+            <li>Led team to build an integration with TransUnion credit rating</li>
+            <li>Led cross-team effort to standardize frameworks</li>
+            <li>Coordinated meetups hosted by The Zebra, including groups like <a href="https://www.open-austin.org">Open Austin</a></li>
+          </ul>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">python</span><span class="tag">django</span><span class="tag">celery</span><span class="tag">fastapi</span><span class="tag">react</span><span class="tag">vuejs</span><span class="tag">postgres</span><span class="tag">docker</span>
+          </div>
+        </div>
 
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">Senior Staff Engineer</h3>
-                <div class="time">2018 - April 2020</div>
-              </div>
-              <div class="company">
-                <a href="https://thezebra.com">The Zebra</a>, Austin
-              </div>
-            </div>
-            <div class="details">
-              <p>
-                Led teams building all aspects of car insurance quotes.
-                Advocated for simpler system designs, and closely collaborated
-                with product owners to ensure both feature development and tech
-                debt were addressed.
-              </p>
-              <ul>
-                <li>
-                  Led team to build to build internal
-                  <a href="https://www.oag.ca.gov/privacy/ccpa">CCPA </a>
-                  compliance system
-                </li>
-                <li>
-                  Led team to build an integration with TransUnion credit rating
-                </li>
-                <li>Led cross-team effort to standardize frameworks</li>
-                <li>
-                  Coordinated meetups hosted by The Zebra, including groups like
-                  <a href="https://www.open-austin.org">Open Austin</a>
-                </li>
-              </ul>
-            </div>
-            <div class="tech">
-              <b>key tech</b>
-              <span
-                >python, django, celery, fastapi, react, vuejs,
-                postgres, docker</span
-              >
-            </div>
+        <div class="card">
+          <div class="row">
+            <span><span class="role">Technology Fellow, Engineering Lead</span> · <span class="co"><a href="https://wewereodd.com">Office of Design and Delivery</a></span> <span class="loc">· City of Austin</span></span>
+            <span class="when">2017 — 2018</span>
           </div>
+          <p class="desc">
+            During a 1-year fellowship at the City of Austin, fostered a
+            development culture based around empathy, compassion, and teaching.
+          </p>
+          <ul>
+            <li>Helped create <a href="https://alpha.austin.gov">austin.gov</a> to replace austintexas.gov</li>
+            <li>Created NerdShops™ to teach designers to use git and content strategists to use the terminal</li>
+            <li>Customized and deployed a <a href="https://github.com/cityofaustin/joplin">CMS backend</a></li>
+            <li>Developed a prototype <a href="https://github.com/cityofaustin/pearl">CMS editor interface</a></li>
+          </ul>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">docker</span><span class="tag">python</span><span class="tag">wagtail</span><span class="tag">graphql</span><span class="tag">react</span><span class="tag">vuejs</span>
+          </div>
+        </div>
 
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">Technology Fellow, Engineering Lead</h3>
-                <div class="time">2017 - 2018</div>
-              </div>
-              <div class="company">
-                <a href="https://wewereodd.com">Office of Design and Delivery</a> City of Austin</div>
-            </div>
-            <div class="details">
-              <p>
-                During a 1-year fellowship at the City of Austin, fostered a
-                development culture based around empathy, compassion, and
-                teaching.
-              </p>
-              <ul>
-                <li>
-                  Helped create
-                  <a href="https://alpha.austin.gov">austin.gov</a> to replace
-                  austintexas.gov
-                </li>
-                <li>
-                  Created NerdShops™ to teach designers to use git and content
-                  strategists to use the terminal
-                </li>
-                <li>
-                  Customized and deployed a
-                  <a href="https://github.com/cityofaustin/joplin"
-                    >CMS backend</a
-                  >
-                </li>
-                <li>
-                  Developed a prototype
-                  <a href="https://github.com/cityofaustin/pearl"
-                    >CMS editor interface</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="tech">
-              <b>key tech</b>
-              <span>docker, python, wagtail, graphql, react, vuejs</span>
-            </div>
+        <div class="card">
+          <div class="row">
+            <span><span class="role">CTO &amp; Co-Founder</span> · <span class="co"><a href="https://ordoro.com">Ordoro</a></span> <span class="loc">· Austin</span></span>
+            <span class="when">2010 — 2017</span>
           </div>
+          <p class="desc">Interesting company stats as of 2017 (company has continued to grow since):</p>
+          <div class="tech">
+            <span class="tag hl">2000+ customers</span>
+            <span class="tag hl">$2M+ annual revenue</span>
+            <span class="tag hl">19 employees</span>
+            <span class="tag hl">$3M in funding</span>
+          </div>
+          <p class="desc" style="margin-top:16px">
+            I got to do all kinds of fun stuff building
+            <a href="https://ordoro.com">ordoro.com</a>
+          </p>
+          <ul>
+            <li>Recruited &amp; mentored the development team as it grew from 1 to 9 (as well as 3 interns)</li>
+            <li>Evolved tech stack from single django app to multiple microservices and multiple UIs</li>
+            <li>Wrote a boatload of testable &amp; maintainable code</li>
+            <li>Oversaw dev team interactions with outside groups including customers, support, sales, 3rd-party developers and investors</li>
+            <li>Iterated on development process &amp; cross-team release scheduling</li>
+            <li>Partnered with local tech orgs such as Women Who Code &amp; Open Austin</li>
+            <li>Took on important non-tech duties like health insurance coordinator, office manager and cheerleader</li>
+          </ul>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">python</span><span class="tag">node</span><span class="tag">react</span><span class="tag">postgres</span><span class="tag">elasticsearch</span><span class="tag">redis</span><span class="tag">docker</span><span class="tag">nginx</span><span class="tag">aws</span><span class="tag">gcp</span>
+          </div>
+        </div>
 
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">CTO & Co-Founder</h3>
-                <div class="time">2010 - 2017</div>
-              </div>
-              <div class="company">
-                <a href="https://ordoro.com">Ordoro</a>, Austin
-              </div>
-            </div>
-            <div>
-              <p>Interesting company stats as of 2017 (company has continued to grow since):</p>
-              <ul>
-                <li>2000+ customers</li>
-                <li>$2+ million in annual revenue</li>
-                <li>19 employees</li>
-                <li>$3 million in funding</li>
-              </ul>
-            </div>
-            <div class="details">
-              <p>
-                I got to do all kinds of fun stuff building
-                <a href="https://ordoro.com">ordoro.com</a>
-              </p>
-              <ul>
-                <li>
-                  Recruited & mentored the development team as it grew from 1 to
-                  9 (as well as 3 interns)
-                </li>
-                <li>
-                  Evolved tech stack from single django app to multiple
-                  microservices and multiple UIs
-                </li>
-                <li>Wrote a boatload of testable & maintainable code</li>
-                <li>
-                  Oversaw dev team interactions with outside groups including
-                  customers, support, sales, 3rd-party developers and investors
-                </li>
-                <li>
-                  Iterated on development process & cross-team release
-                  scheduling
-                </li>
-                <li>
-                  Partnered with local tech orgs such as Women Who Code & Open
-                  Austin
-                </li>
-                <li>
-                  Took on important non-tech duties like health insurance
-                  coordinator, office manager and cheerleader
-                </li>
-              </ul>
-            </div>
-            <div class="tech">
-              <b>key tech</b>
-              <span
-                >python, node, react, postgres, elasticsearch, redis, docker,
-                nginx, aws, gcp</span
-              >
-            </div>
+        <div class="card">
+          <div class="row">
+            <span><span class="role">Special Projects Engineer</span> · <span class="co"><a href="https://bazaarvoice.com">Bazaarvoice</a></span> <span class="loc">· Austin</span></span>
+            <span class="when">2009 — 2010</span>
           </div>
+          <p class="desc">
+            Created prototype applications using the Facebook API. Spearheaded
+            first use of mongo, elasticsearch and internal JSON APIs at
+            Bazaarvoice. Worked closely with brands such as Ford and Benefit
+            Cosmetics.
+          </p>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">python</span><span class="tag">mongo</span><span class="tag">elasticsearch</span>
+          </div>
+        </div>
 
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">Special Projects Engineer</h3>
-                <div class="time">2009 - 2010</div>
-              </div>
-              <div class="company">
-                <a href="https://bazaarvoice.com">Bazaarvoice</a>, Austin
-              </div>
-            </div>
-            <div class="details">
-              <p>
-                Created prototype applications using the Facebook API.
-                Spearheaded first use of mongo, elasticsearch and internal JSON
-                APIs at Bazaarvoice. Worked closely with brands such as Ford and
-                Benefit Cosmetics.
-              </p>
-            </div>
-            <div class="tech">
-              <b>key tech</b> <span>python, mongo, elasticsearch</span>
-            </div>
+        <div class="card">
+          <div class="row">
+            <span><span class="role">Staff Software Engineer</span> · <span class="co"><a href="https://ni.com">National Instruments</a></span> <span class="loc">· Austin</span></span>
+            <span class="when">2003 — 2009</span>
           </div>
+          <p class="desc">
+            Developed everything from computer vision algorithms to Windows
+            device drivers to C++ courses to user feedback sessions to robotic
+            Lego monkeys. Also managed several small teams and projects. AMA!
+          </p>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">c++</span><span class="tag">make</span><span class="tag">python</span><span class="tag">perl</span><span class="tag">bash</span>
+          </div>
+        </div>
+      </section>
 
-          <div class="item">
-            <div class="meta">
-              <div class="upper-row">
-                <h3 class="job-title">Staff Software Engineer</h3>
-                <div class="time">2003 - 2009</div>
-              </div>
-              <div class="company">
-                <a href="https://ni.com">National Instruments</a>, Austin
-              </div>
-            </div>
-            <div class="details">
-              <p>
-                Developed everything from computer vision algorithms to Windows
-                device drivers to C++ courses to user feedback sessions to
-                robotic Lego monkeys. Also managed several small teams and
-                projects. AMA!
-              </p>
-            </div>
-            <div class="tech">
-              <b>key tech</b> <span>c++, make, python, perl, bash</span>
-            </div>
+      <section>
+        <h2 class="section-title">Other Interests</h2>
+        <div class="card">
+          <div class="row">
+            <span class="role"><a href="http://www.austinrecers.com">Austin Rec'ers</a></span>
           </div>
-        </section>
+          <p class="desc" style="margin-bottom:0">
+            I play wheelchair basketball with the Austin Rec'ers. I'm not very good.
+          </p>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">wheels</span><span class="tag">basketball</span><span class="tag">hoop</span>
+          </div>
+        </div>
+      </section>
 
-        <section class="section projects-section">
-          <h2 class="section-title">
-            <i class="fa fa-archive"></i>Other Interests
-          </h2>
-          <div class="item">
-            <h4><a href="http://www.austinrecers.com">Austin Rec'ers</a></h4>
-            <span class="project-tagline"
-              >I play wheelchair basketball with the Austin Rec'ers. I'm not
-              very good.</span
-            >
-            <div class="tech">
-              <b>key tech</b> <span>wheels, basketball, hoop</span>
-            </div>
+      <section>
+        <h2 class="section-title">Old News</h2>
+        <div class="card">
+          <div class="row">
+            <span class="role">Austin Web Python Users Group</span>
           </div>
-        </section>
-
-        <section class="section projects-section">
-          <h2 class="section-title">
-            <i class="fa fa-archive"></i>Old news
-          </h2>
-          <div class="item">
-            <h4>Austin Web Python Users Group</h4>
-            <!-- <div class="time">2011 - 2019</div> -->
-            <span class="project-tagline"
-              >Co-founder and co-organizer of the main python developer group in
-              Austin, with monthly meetings that draw 30-50 developers to
-              discuss a range of topics. This is now a part of the
-              <a href="https://www.meetup.com/austinpython/"
-                >Austin Python User Group</a
-              >.</span
-            >
-            <div class="tech"><b>key tech</b> <span>python</span></div>
+          <p class="desc" style="margin-bottom:0">
+            Co-founder and co-organizer of the main python developer group in
+            Austin, with monthly meetings that draw 30-50 developers to discuss a
+            range of topics. This is now a part of the
+            <a href="https://www.meetup.com/austinpython/">Austin Python User Group</a>.
+          </p>
+          <div class="tech">
+            <b>key tech</b>
+            <span class="tag">python</span>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
 
     <footer class="footer">
-      <div class="text-center">
-        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-        <small class="copyright"
-          >Template designed with <i class="fa fa-heart"></i> by
-          <a href="http://themes.3rdwavemedia.com">Xiaoying Riley</a> for
-          developers</small
-        >
-      </div>
+      <small>Built by Ben Weatherman · original template by
+        <a href="http://themes.3rdwavemedia.com">Xiaoying Riley</a></small>
     </footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('themeToggle');
+        var label = btn.querySelector('.label');
+        setLabel(root.getAttribute('data-theme'));
+        btn.addEventListener('click', function () {
+          var next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          setLabel(next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+        function setLabel(t) {
+          label.textContent = t === 'dark' ? 'Dark' : 'Light';
+        }
+      })();
+    </script>
   </body>
 </html>
